@@ -1,0 +1,533 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:16px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 800px;
+	}
+	
+	h1 {
+		font-weight:300;
+	}
+		
+	h2 {
+		font-weight:300;
+		font-size: 22px;
+		text-align: left;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+	pre {
+    text-align: left;
+    white-space: pre;
+	background-color: ghostwhite;
+	border: 1px solid #CCCCCC;
+	padding: 10px 20px;
+	margin: 10px;
+    tab-size:         4; /* Chrome 21+, Safari 6.1+, Opera 15+ */
+    -moz-tab-size:    4; /* Firefox 4+ */
+    -o-tab-size:      4; /* Opera 11.5 & 12.1 only */
+  	}
+
+</style>
+
+<html>
+  <head>
+		<title>Explainable Person Re-Identification with Attribute-guided Metric Distillation</title>
+		<meta property="og:image" content=""/>
+		<meta property="og:title" content="Explainable Person Re-Identification with Attribute-guided Metric Distillation" />
+  </head>
+
+  <body>
+    <br>
+          <center>
+          	<span style="font-size:42px">Explainable Person Re-Identification with Attribute-guided Metric Distillation</span>
+	  		  <table align=center width=900px>
+	  			  <tr>
+	  	              <td align=center width=170px>
+	  					<center>
+	  						<span style="font-size:20px"><a href="https://github.com/">Xiaodong Chen<sup>1,2</sup></a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=140px>
+	  					<center>
+	  						<span style="font-size:20px"><a href="https://github.com/">Xinchen Liu<sup>2</sup></a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:20px"><a href="https://github.com/">Wu Liu<sup>2</sup></a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td align=center width=170px>
+						<center>
+							<span style="font-size:20px"><a href="https://github.com/">Xiao-Ping Zhang<sup>3</sup>   </a></span>
+						</center>
+					</td>
+					<td align=center width=170px>
+						<center>
+							<span style="font-size:20px"><a href="https://github.com/">Yongdong Zhang<sup>1</sup></a></span>
+						</center>
+					</td>
+
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:20px"><a href="https://github.com/">Tao Mei<sup>2</sup></a></span>
+						</center>
+					</td>
+				</table>
+          		<!-- <span style="font-size:30px">ICCV 2021.</span> -->
+
+			  <table align=center width=900px>
+				  <tr>
+					  <td align=center width=400px>
+						<center>
+							<span style="font-size:18px"><a href="https://github.com/"><sup>1</sup>University Of Science And Technology Of China</a></span>
+						</center>
+					  </td>
+					  <td align=center width=250px>
+						<center>
+							<span style="font-size:18px"><a href="https://github.com/"><sup>2</sup>AI Research of JD.com</a></span>
+						</center>
+					  </td>
+					  <td align=center width=200px>
+						<center>
+							<span style="font-size:18px"><a href="https://github.com/"><sup>3</sup>Ryerson University</a></span>
+						</center>
+					  </td>
+
+			  </table>
+			IEEE International Conference on Computer Vision (<a href="http://iccv2021.thecvf.com/" target="_blank">ICCV</a>) 2021, <font color="#e86e14">Poster Presentation</font>
+          </center>
+
+   		  <br><br>
+		  <hr>
+
+  		  <br>
+  		  <table align=center width=720px>
+  			  <tr>
+  	              <td width=400px>
+  					<center>
+  	                	<a href="./resources/images/Figure1.png" ><img class="rounded" src = "./resources/images/Figure1.png" width="95%" ></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>The motivation of attribute-guided metric distillation. (a) Given a query, the ReID model returns a rank list of gallery images based on pairwise metrics. (b) The learned Interpreter can visualize intuitive attention maps of attributes to tell users what attributes make two persons different, and generate contributions of attributes to reflect the impact of each attribute.  (c) Refined results by re-weighted distances from Interpreter. (Best viewed in color.)</i>
+					</center>
+  	              </td>
+
+  		  </table>
+      	  <br><br>
+
+		  <table align=center width=720px>
+			<!-- <center><h1>Download</h1></center> -->
+			<tr>
+				<td width=300px>
+					<center>
+						<a href="#download"><img class="rounded" onmouseover="this.src='./resources/images/data_icon.png';" onmouseout="this.src='./resources/images/data_icon.png';" src = "./resources/images/data_icon.png" height = "120px"></a><br>
+						<span style="font-size:16px">Download</span><br>
+					</center>
+				</td>
+				<td width=300px>
+					<center>
+						<a href="#video"><img class="rounded" onmouseover="this.src='./resources/images/video_icon.png';" onmouseout="this.src='./resources/images/video_icon.png';" src = "./resources/images/video_icon.png" height = "120px"></a><br>
+						<span style="font-size:16px">Videos at ICCV'2021</span><br>
+					</center>
+				</td>
+				<td width=300px>
+					<center>
+						<a href="#analysis"><img class="rounded" onmouseover="this.src='./resources/images/magnify_glass.png';" onmouseout="this.src='./resources/images/magnify_glass.png';" src = "./resources/images/magnify_glass.png" height = "120px"></a><br>
+						<span style="font-size:16px">Analysis</span><br>
+					</center>
+				</td>
+				<td width=300px>
+					<center>
+					  <a href="https://github.com/SheldongChen/AMD.github.io"><img class="rounded" onmouseover="this.src='./resources/images/github_icon.png';" onmouseout="this.src='./resources/images/github_icon.png';" src = "./resources/images/github_icon.png" height = "120px"></a><br>
+					  <span style="font-size:16px">GitHub Repo</span><br>						
+					</center>
+				</td>
+			</tr>
+		  </table>
+
+		  <br><br>
+
+		  <hr>
+
+  		  <table align=center width=720px>
+				<center><h1>Abstract</h1></center>
+		  </table>
+		  <center>
+			<span>
+		 	Despite the great progress of person re-identification (ReID) with the adoption of Convolutional Neural Networks, current ReID models are opaque and only outputs a scalar distance between two persons.
+			There are few methods providing users semantically understandable explanations for why two persons are the same one or not.
+			In this paper, we propose a post-hoc method, named Attribute-guided Metric Distillation (AMD), to explain existing ReID models.
+			This is the first method to explore attributes to answer: 1) what and where the attributes make two persons different, and 2) how much each attribute contributes to the difference.
+			In AMD, we design a pluggable interpreter network for target models to generate quantitative contributions of attributes and visualize accurate attention maps of the most discriminative attributes.
+			To achieve this goal, we propose a metric distillation loss by which the interpreter learns to decompose the distance of two persons into components of attributes with knowledge distilled from the target model.
+			Moreover, we propose an attribute prior loss to make the interpreter generate attribute-guided attention maps and to eliminate biases caused by the imbalanced distribution of attributes.
+			This loss can guide the interpreter to focus on the exclusive and discriminative attributes rather than the large-area but common attributes of two persons. 
+			Comprehensive experiments show that the interpreter can generate effective and intuitive explanations for varied models and generalize well under cross-domain settings.
+			As a by-product, the accuracy of target models can be further improved with our interpreter.
+		  	</span>
+		  </center>
+  		  <br><br>
+		  <hr>
+
+		
+
+		  <table align=center width=720px>
+			<center><h1>2-Minute presentation video</h1></center>
+			<tr>
+				<table align=center width=720px>
+					<tr>
+						<td align=center width=720px>
+							<iframe width="600" height="320" src="https://www.youtube.com/watch?v=wJxa4aED6Kc" frameborder="0" allowfullscreen></iframe> 
+						</td>
+					  </tr>
+					<tr>
+					 </table>
+			  </tr>
+		  </table>
+		   <br><br>
+		  <hr>
+
+
+		  <table align=center width=720px>
+			<center><h1>Architecture</h1></center>
+			<tr>
+				<td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/images/Figure2.png" width="800px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+				<td width=400px>
+				  <center>
+					  <span style="font-size:14px"><i>
+						The overall architecture of the attribute-guided metric distillation framework for person ReID. (a) The target ReID model that generates the pairwise distance for an image pair. (b) The interpret network that learns to decompose the pairwise distance into components of attributes and generates attention-guided attention maps for individual attributes. (Best viewed in color.)
+						</i>
+				</center>
+				</td>
+
+		  </table>
+	      <br><br>
+		  <hr>
+
+		  <table align=center width=720px>
+			<center><h1>Statistics of Attributes</h1></center>
+			<tr>
+				<center>
+				<span>
+					The statistics of attributes in Market-1501 and DukeMTMC-ReID are shown in Figures, which shows that the attributes are very imbalanced</span>
+				<br>
+				</center>
+				<td width=360px>
+					<center>
+						<span style="font-size:22px"><a>Market-1501</a></span><br>
+						<a><img class="rounded" src = "./resources/images/Figure3.PNG" width="360px"></img></a><br>
+					</center>
+				</td>
+				<td width=360px>
+					<center>
+						<span style="font-size:22px"><a>DukeMTMC-ReID</a></span><br>
+						<a><img class="rounded" src = "./resources/images/Figure5.PNG" width="360px"></img></a><br>
+					</center>
+				</td>
+			</tr>
+		  </table>
+
+		  <br><br>
+		  <hr>
+
+		  <table id='analysis' align=center width=720px>
+			<center><h1>Evaluation and Visualization</h1></center>
+			<table>
+			<center><h2> (1) Evaluation of interpreters for different backbone models on Market-1501 and DukeMTMC-ReID.  </h2></center>
+			<tr>
+				  <td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/images/Table1.PNG" width="800px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td align=center width=720px>
+				  <span style="font-size:14px"><i>
+					Each target model and the corresponding interpreter are grouped for comparison.</i>
+				</span>
+				</td>
+			</tr>
+			</table>
+
+			<br>
+
+			<table>
+			<center><h2> (2) Pairwise examples and explanations for SBS (ResNet-50) on two datasets. </h2></center>
+			<tr>
+				  <td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/images/Figure4.PNG" width="800px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td align=center width=720px>
+				  <span style="font-size:14px"><i>
+					For each pair of images, the upper part visualizes the
+					AAMs of the top-3 attributes, which shows that the AAMs are attended to the discriminative attributes. The lower part shows the overall
+					distance and contributions of the top-3 attributes. These figures show the most contributed attributes discovered by the interpreter.</i>
+				</span>
+				</td>
+			</tr>
+			</table>
+
+			<br>
+
+			<table>
+				<center><h2> (3) Under the cross-domain setting? </h2></center>
+				<tr>
+					  <td width=400px>
+					  <center>
+						  <a><img class="rounded" src = "./resources/images/Table2.PNG" width="800px"></img></a><br>
+					</center>
+					</td>
+				</tr>
+				<tr>
+					<td align=center width=720px>
+					  <span style="font-size:14px"><i>
+						Evaluation of the interpreters for SBS (ResNet-50) under the cross-domain setting. 
+						M to D means the SBS models and interpreters are trained on Market-1501 and tested on DukeMTMC-ReID, and D to M means the reverse setting. 
+						The results demonstrate that the information loss of interpreters is very minor under the cross-domain setting.</i>
+					</span>
+					</td>
+				</tr>
+				</table>
+
+			
+		
+					
+		</table>
+	      <br><br>
+		  <hr>
+
+
+		  <table id="download" align=center width=720px>
+			<center><h1>Download</h1></center>
+			<tr>
+		
+				<td width=300px>
+					<center>
+						<span style="font-size:24px">Log of train and test</span><br><br>
+						<img class="rounded" onmouseover="this.src='./resources/images/dataset_icon.jpg';" onmouseout="this.src='./resources/images/dataset_icon.jpg';" src = "./resources/images/dataset_icon.jpg" height = "150px"><br><br>
+						<span style="font-size:16px"><a href='resources/dataset/'>TBD</a></span><br>
+						<span style="font-size:16px"><a href='resources/dataset/'>TBD</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				<table>
+				<center><h2> Updates </h2></center>
+				[01/10/2021] We include new subsections to track updates and address FAQs.<br>
+				<center><h2> FAQs </h2></center>
+				Q0: TBD:<br>
+				A0: TBD.<br>
+				 </table>
+		 
+		 <br><br>
+		 <hr>
+
+		 <table align=center width=720px>
+			<center><h1>Paper</h1></center>
+			   <tr>
+				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure6.png"/></a></td>
+				 <td><span style="font-size:14pt">Chen, Liu, Liu, Zhang, Zhang, Mei.<br>
+				 Explainable Person Re-Identification with Attribute-guided Metric Distillation<br>
+				 In ICCV, 2021 (Poster).<br>
+				 (<a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Explainable_Person_Re-Identification_With_Attribute-Guided_Metric_Distillation_ICCV_2021_paper.pdf">arXiv</a>)</a>
+				 <span style="font-size:4pt"><a href=""><br></a>
+				 </span>
+				 </td>
+				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure7.png"/></a></td>
+				 <td><span style="font-size:14pt">
+				 (<a href="https://openaccess.thecvf.com/content/ICCV2021/supplemental/Chen_Explainable_Person_Re-Identification_ICCV_2021_supplemental.pdf">Additional details/<br>supplementary materials</a>)</a>
+				 <span style="font-size:4pt"><a href=""><br></a>
+				 </span>
+				 </td>
+			 </tr>
+		   </table>
+		 
+		 <br><br>
+		 <hr>
+
+		  <table align=center width=720px>
+			<center><h1>Cite</h1></center>
+		  <div class="disclaimerbox">
+			<!-- <center><h2>How to interpret the results</h2></center> -->
+
+		   <span>
+				<!-- <center><span style="font-size:28px"><b>Cite</b></span></center> -->
+				<pre style = "font-family:Courier; font-size:14px">
+@inproceedings{chen2021AMD,
+title={Explainable Person Re-Identification with Attribute-guided Metric Distillation},
+author=Chen, Liu and Liu, Zhang and Zhang, Mei.},
+booktitle={IEEE International Conference on Computer Vision (ICCV)},
+year={2021}
+}
+				</pre>
+		  </div>
+  		  </table>
+
+			<br><br>
+			<hr>
+  
+		  	
+  		  <table align=center width=720px>
+  			  <tr>
+  	              <td width=400px>
+  					<left>
+	  		  <center><h1>Acknowledgements</h1></center>
+				This work was supported by the National Key R&D Program of China under Grant No.2020AAA0103800.<br>
+				This work was done when Xiaodong Chen was an intern at JD AI Research.<br>
+</href><a>
+			</left>
+		</td>
+			 </tr>
+		</table>
+
+		<br><br>
+		<hr>
+
+		<table align=center width=720px>
+			<tr>
+				<td width=400px>
+				  <left>
+			<center><h1>Contact</h1></center>
+			For further questions and suggestions, please contact Xiaodong Chen (<a href='mailto:cxd1230@mail.ustc.edu.cn'>cxd1230@mail.ustc.edu.cn</a>).
+			
+			
+		</left>
+	</td>
+		 </tr>
+	</table>
+
+		<br><br>
+
+<script>
+	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75863369-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+              
+</body>
+</html>
+ 
