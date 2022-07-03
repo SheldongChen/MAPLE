@@ -136,15 +136,15 @@
 
 <html>
   <head>
-		<title>Explainable Person Re-Identification with Attribute-guided Metric Distillation</title>
+		<title>MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition</title>
 		<meta property="og:image" content=""/>
-		<meta property="og:title" content="Explainable Person Re-Identification with Attribute-guided Metric Distillation" />
+		<meta property="og:title" content="MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition" />
   </head>
 
   <body>
     <br>
           <center>
-          	<span style="font-size:42px">Explainable Person Re-Identification with Attribute-guided Metric Distillation</span>
+          	<span style="font-size:42px">MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition</span>
 	  		  <table align=center width=900px>
 	  			  <tr>
 	  	              <td align=center width=170px>
@@ -179,7 +179,7 @@
 						</center>
 					</td>
 				</table>
-          		<!-- <span style="font-size:30px">ICCV 2021.</span> -->
+          		<!-- <span style="font-size:30px">ACM MM 2022.</span> -->
 
 			  <table align=center width=900px>
 				  <tr>
@@ -200,7 +200,7 @@
 					  </td>
 
 			  </table>
-			IEEE International Conference on Computer Vision (<a href="http://iccv2021.thecvf.com/" target="_blank">ICCV</a>) 2021, <font color="#e86e14">Poster Presentation</font>
+			  ACM Multimedia 2022 (<a href="https://2022.acmmm.org/" target="_blank">ACM MM</a>) 2022, <font color="#e86e14">Poster Presentation</font>
           </center>
 
    		  <br><br>
@@ -217,7 +217,7 @@
                 </tr>
   	              <td width=400px>
   					<center>
-  	                	<span style="font-size:14px"><i>The motivation of attribute-guided metric distillation. (a) Given a query, the ReID model returns a rank list of gallery images based on pairwise metrics. (b) The learned Interpreter can visualize intuitive attention maps of attributes to tell users what attributes make two persons different, and generate contributions of attributes to reflect the impact of each attribute.  (c) Refined results by re-weighted distances from Interpreter. (Best viewed in color.)</i>
+  	                	<span style="font-size:14px"><i>Figure 1</i>
 					</center>
   	              </td>
 
@@ -247,7 +247,7 @@
 				</td>
 				<td width=300px>
 					<center>
-					  <a href="https://github.com/SheldongChen/AMD.github.io"><img class="rounded" onmouseover="this.src='./resources/images/github_icon.png';" onmouseout="this.src='./resources/images/github_icon.png';" src = "./resources/images/github_icon.png" height = "120px"></a><br>
+					  <a href="https://github.com/SheldongChen/MAPLE"><img class="rounded" onmouseover="this.src='./resources/images/github_icon.png';" onmouseout="this.src='./resources/images/github_icon.png';" src = "./resources/images/github_icon.png" height = "120px"></a><br>
 					  <span style="font-size:16px">GitHub Repo</span><br>						
 					</center>
 				</td>
@@ -263,16 +263,15 @@
 		  </table>
 		  <center>
 			<span>
-		 	Despite the great progress of person re-identification (ReID) with the adoption of Convolutional Neural Networks, current ReID models are opaque and only outputs a scalar distance between two persons.
-			There are few methods providing users semantically understandable explanations for why two persons are the same one or not.
-			In this paper, we propose a post-hoc method, named Attribute-guided Metric Distillation (AMD), to explain existing ReID models.
-			This is the first method to explore attributes to answer: 1) what and where the attributes make two persons different, and 2) how much each attribute contributes to the difference.
-			In AMD, we design a pluggable interpreter network for target models to generate quantitative contributions of attributes and visualize accurate attention maps of the most discriminative attributes.
-			To achieve this goal, we propose a metric distillation loss by which the interpreter learns to decompose the distance of two persons into components of attributes with knowledge distilled from the target model.
-			Moreover, we propose an attribute prior loss to make the interpreter generate attribute-guided attention maps and to eliminate biases caused by the imbalanced distribution of attributes.
-			This loss can guide the interpreter to focus on the exclusive and discriminative attributes rather than the large-area but common attributes of two persons. 
-			Comprehensive experiments show that the interpreter can generate effective and intuitive explanations for varied models and generalize well under cross-domain settings.
-			As a by-product, the accuracy of target models can be further improved with our interpreter.
+				Recognizing human actions from point cloud videos has attracted tremendous attention from both academia and industry due to its wide applications like automatic driving, robotics, and human-computer interaction.
+				However, current methods for point cloud action recognition usually require a huge amount of data with manual annotations and a complex backbone network with high computation cost, which makes it impractical for real-world applications.
+				Therefore, this paper considers the task of semi-supervised point cloud action recognition with an efficient model.
+				To this end, we propose a Masked Pseudo-Labeling autoEncoder (<b>MAPLE</b>) framework to learn effective representations with much fewer annotations for point cloud action recognition.
+				In particular, we design a novel and efficient <b>De</b>coupled <b>s</b>patial-<b>t</b>emporal Trans<b>Former</b> (<b>DestFormer</b>) as the backbone of MAPLE.
+				In DestFormer, the spatial and temporal dimensions of the 4D point cloud videos are decoupled to achieve an efficient self-attention for learning both long-term and short-term features.
+				Moreover, to learn discriminative features from fewer annotations, we design a masked pseudo-labeling autoencoder structure to guide the DestFormer to reconstruct features of masked frames from the available frames.
+				More importantly, for unlabeled data, we exploit the pseudo-labels from the classification head as the supervision signal for the reconstruction of features from the masked frames.
+				Finally, comprehensive experiments demonstrate that MAPLE achieves superior results on three public benchmarks and outperforms the state-of-the-art method by 8.08% accuracy on the MSR-Action3D dataset.
 		  	</span>
 		  </center>
   		  <br><br>
@@ -281,12 +280,12 @@
 		
 
 		  <table align=center width=720px>
-			<center><h1>2-Minute presentation video</h1></center>
+			<center><h1>5-Minute presentation video</h1></center>
 			<tr>
 				<table align=center width=720px>
 					<tr>
 						<td align=center width=720px>
-							<iframe width="600" height="320" src="https://www.youtube.com/watch?v=wJxa4aED6Kc" frameborder="0" allowfullscreen></iframe> 
+							<iframe width="600" height="320" src="https://www.youtube.com/watch?v=" frameborder="0" allowfullscreen></iframe> 
 						</td>
 					  </tr>
 					<tr>
@@ -445,8 +444,8 @@
 			   <tr>
 				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure6.png"/></a></td>
 				 <td><span style="font-size:14pt">Chen, Liu, Liu, Zhang, Zhang, Mei.<br>
-				 Explainable Person Re-Identification with Attribute-guided Metric Distillation<br>
-				 In ICCV, 2021 (Poster).<br>
+				 MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition<br>
+				 In ACM MM, 2022 (Poster).<br>
 				 (<a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Explainable_Person_Re-Identification_With_Attribute-Guided_Metric_Distillation_ICCV_2021_paper.pdf">arXiv</a>)</a>
 				 <span style="font-size:4pt"><a href=""><br></a>
 				 </span>
@@ -471,12 +470,12 @@
 		   <span>
 				<!-- <center><span style="font-size:28px"><b>Cite</b></span></center> -->
 				<pre style = "font-family:Courier; font-size:14px">
-@inproceedings{chen2021AMD,
-title={Explainable Person Re-Identification with Attribute-guided Metric Distillation},
-author=Chen, Liu and Liu, Zhang and Zhang, Mei.},
-booktitle={IEEE International Conference on Computer Vision (ICCV)},
-year={2021}
-}
+				@inproceedings{chen2022MAPLE,
+				title={MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition},
+				author=Chen, Liu and Liu, Zhang and Zhang, Mei.},
+				booktitle={ACM Multimedia (ACM MM)},
+				year={2022}
+				}
 				</pre>
 		  </div>
   		  </table>
