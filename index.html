@@ -296,7 +296,7 @@
 
 
 		  <table align=center width=720px>
-			<center><h1>Architecture</h1></center>
+			<center><h1>Architecture of DestFormer</h1></center>
 			<tr>
 				<td width=400px>
 				  <center>
@@ -308,10 +308,10 @@
 				  <center>
 					  <span style="font-size:14px"><i>
 						The detail of DestFormer. 
-						(a) <i>Data Preparation</i>: we construct some local areas (e.g. ``a'') on adjacent frames (e.g. ``t1'', ``t2'') from the input $x_i$ as what P4Conv do. 
-						(b) <i>Spatial Extractor</i>: we adopt P4Conv for modeling short-time local information and feed the output $s_i$ frame by frame into a spatial transformer for extracting the merged local feature $m_i$. 
-						(c) <i>Temporal Aggregator</i>: we generate the short-term global feature $g_i$ through the pooling layer and aggregate the long-term global information with the temporal encoder. 
-						(d) <i>Prediction Head</i>: we project the global feature $v_i$ into label space via the classification head.
+						(a) <i>Data Preparation</i>: we construct some local areas (e.g. ``a'') on adjacent frames (e.g. ``t1'', ``t2'') from the input `x_i` as what P4Conv do. 
+						(b) <i>Spatial Extractor</i>: we adopt P4Conv for modeling short-time local information and feed the output `s_i` frame by frame into a spatial transformer for extracting the merged local feature `m_i`. 
+						(c) <i>Temporal Aggregator</i>: we generate the short-term global feature `g_i` through the pooling layer and aggregate the long-term global information with the temporal encoder. 
+						(d) <i>Prediction Head</i>: we project the global feature `v_i` into label space via the classification head.
 						</i>
 				</center>
 				</td>
@@ -321,6 +321,32 @@
 		  <hr>
 
 		  <table align=center width=720px>
+			<center><h1>Architecture of MAPLE</h1></center>
+			<tr>
+				<td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/images/Figure3.png" width="800px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+				<td width=400px>
+				  <center>
+					  <span style="font-size:14px"><i>
+						The detail of our MAPLE. 
+						(<i>a</i>) Adopting our DestFormer backbone and the cross-entropy loss for the supervised training. 
+						(<i>b</i>) The complete training process of MAPLE: 
+						(1) The spatial extractor encodes the input video as the short-term global feature `g_i`. 
+						(2) After randomly discarding the short-term global feature `g_i`, the temporal encoder projects the visible subset of `g_i` as the latent representation `z_i`. 
+						(3) The temporal decoder is responsible for reconstructing `r_i` from the latent representation `z_i` and the mask tokens `M`. 
+						(4) The classification head generates the pseudo-label `P_i` and `\hat{P}_i` as our reconstruction target. Note that the modules here with the same colors share weights.
+						</i>
+				</center>
+				</td>
+
+		  </table>
+
+
+		  <!-- <table align=center width=720px>
 			<center><h1>Statistics of Attributes</h1></center>
 			<tr>
 				<center>
@@ -328,7 +354,7 @@
 					The statistics of attributes in Market-1501 and DukeMTMC-ReID are shown in Figures, which shows that the attributes are very imbalanced</span>
 				<br>
 				</center>
-				<td width=360px>
+				<td width=720px>
 					<center>
 						<span style="font-size:22px"><a>Market-1501</a></span><br>
 						<a><img class="rounded" src = "./resources/images/Figure3.PNG" width="360px"></img></a><br>
@@ -341,7 +367,7 @@
 					</center>
 				</td>
 			</tr>
-		  </table>
+		  </table> -->
 
 		  <br><br>
 		  <hr>
