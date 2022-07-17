@@ -332,7 +332,7 @@
 			</tr>
 				<td width=400px>
 				  <center>
-					  <span style="font-size:14px"><i>
+					  <span style="font-size:14px"><div class="formula">
 						The detail of our MAPLE. 
 						(<i>a</i>) Adopting our DestFormer backbone and the cross-entropy loss for the supervised training. 
 						(<i>b</i>) The complete training process of MAPLE: 
@@ -340,110 +340,72 @@
 						(2) After randomly discarding the short-term global feature `g_i`, the temporal encoder projects the visible subset of `g_i` as the latent representation `z_i`. 
 						(3) The temporal decoder is responsible for reconstructing `r_i` from the latent representation `z_i` and the mask tokens `M`. 
 						(4) The classification head generates the pseudo-label `P_i` and `\hat{P}_i` as our reconstruction target. Note that the modules here with the same colors share weights.
-						</i>
+					</div>
 				</center>
 				</td>
 
 		  </table>
+		  <br><br>
+		  <hr>
 
 
-		  <!-- <table align=center width=720px>
-			<center><h1>Statistics of Attributes</h1></center>
+
+		  <table id='analysis' align=center width=720px>
+			<center><h1>Evaluation and Visualization</h1></center>
+
+
+
+
+			<table align=center width=720px>
+				<center><h1>The results of MAPLE</h1></center>
+				<tr>
+					<center>
+					<span style="font-size:18px">
+						The Semi-supervised results of MAPLE on MSR-Action3D and NTU RGB+D 60</span>
+					<br>
+					</center>
+					<td width=720px>
+						<center>
+							<a><img class="rounded" src = "./resources/images/Figure4.PNG" width="360px"></img></a><br>
+							<span style="font-size:18px"><a>NTU RGB+D 60</a></span><br>
+						</center>
+					</td>
+					<td width=360px>
+						<center>
+							<a><img class="rounded" src = "./resources/images/Figure5.PNG" width="360px"></img></a><br>
+							<span style="font-size:18px"><a>NTU RGB+D 60</a></span><br>
+						</center>
+					</td>
+				</tr>
+			  </table>
+	      <br><br>
+		  <hr>
+		  
+		  <table align=center width=720px>
+			<center><h1>Ablation Study</h1></center>
 			<tr>
 				<center>
-				<span>
-					The statistics of attributes in Market-1501 and DukeMTMC-ReID are shown in Figures, which shows that the attributes are very imbalanced</span>
+				<span style="font-size:22px">
+					The influence of the masking ratio and the depth of the temporal decoder.</span>
 				<br>
 				</center>
 				<td width=720px>
 					<center>
-						<span style="font-size:22px"><a>Market-1501</a></span><br>
-						<a><img class="rounded" src = "./resources/images/Figure3.PNG" width="360px"></img></a><br>
+						<a><img class="rounded" src = "./resources/images/Figure6.jpg" width="360px"></img></a><br>
+						<span style="font-size:18px"><a>The accuracy of classification on NTU RGB+D 60 5% labeled dataset with different masking ratios.</a></span><br>
 					</center>
 				</td>
 				<td width=360px>
 					<center>
-						<span style="font-size:22px"><a>DukeMTMC-ReID</a></span><br>
-						<a><img class="rounded" src = "./resources/images/Figure5.PNG" width="360px"></img></a><br>
+						<a><img class="rounded" src = "./resources/images/Figure7.jpg" width="360px"></img></a><br>
+						<span style="font-size:18px"><a> The accuracy of classification on NTU RGB+D 60 5% labeled dataset with different depth of temporal decoder.</a></span><br>
 					</center>
 				</td>
 			</tr>
-		  </table> -->
+		  </table>
 
 		  <br><br>
 		  <hr>
-
-		  <table id='analysis' align=center width=720px>
-			<center><h1>Evaluation and Visualization</h1></center>
-			<table>
-			<center><h2> (1) Evaluation of interpreters for different backbone models on Market-1501 and DukeMTMC-ReID.  </h2></center>
-			<tr>
-				  <td width=400px>
-				  <center>
-					  <a><img class="rounded" src = "./resources/images/Table1.PNG" width="800px"></img></a><br>
-				</center>
-				</td>
-			</tr>
-			<tr>
-				<td align=center width=720px>
-				  <span style="font-size:14px"><i>
-					Each target model and the corresponding interpreter are grouped for comparison.</i>
-				</span>
-				</td>
-			</tr>
-			</table>
-
-			<br>
-
-			<table>
-			<center><h2> (2) Pairwise examples and explanations for SBS (ResNet-50) on two datasets. </h2></center>
-			<tr>
-				  <td width=400px>
-				  <center>
-					  <a><img class="rounded" src = "./resources/images/Figure4.PNG" width="800px"></img></a><br>
-				</center>
-				</td>
-			</tr>
-			<tr>
-				<td align=center width=720px>
-				  <span style="font-size:14px"><i>
-					For each pair of images, the upper part visualizes the
-					AAMs of the top-3 attributes, which shows that the AAMs are attended to the discriminative attributes. The lower part shows the overall
-					distance and contributions of the top-3 attributes. These figures show the most contributed attributes discovered by the interpreter.</i>
-				</span>
-				</td>
-			</tr>
-			</table>
-
-			<br>
-
-			<table>
-				<center><h2> (3) Under the cross-domain setting? </h2></center>
-				<tr>
-					  <td width=400px>
-					  <center>
-						  <a><img class="rounded" src = "./resources/images/Table2.PNG" width="800px"></img></a><br>
-					</center>
-					</td>
-				</tr>
-				<tr>
-					<td align=center width=720px>
-					  <span style="font-size:14px"><i>
-						Evaluation of the interpreters for SBS (ResNet-50) under the cross-domain setting. 
-						M to D means the SBS models and interpreters are trained on Market-1501 and tested on DukeMTMC-ReID, and D to M means the reverse setting. 
-						The results demonstrate that the information loss of interpreters is very minor under the cross-domain setting.</i>
-					</span>
-					</td>
-				</tr>
-				</table>
-
-			
-		
-					
-		</table>
-	      <br><br>
-		  <hr>
-
 
 		  <table id="download" align=center width=720px>
 			<center><h1>Download</h1></center>
