@@ -306,13 +306,14 @@
 			</tr>
 				<td width=400px>
 				  <center>
-					  <span style="font-size:14px"><i>
+					  <span style="font-size:14px">
+						<div class="formula">
 						The detail of DestFormer. 
 						(a) <i>Data Preparation</i>: we construct some local areas (e.g. ``a'') on adjacent frames (e.g. ``t1'', ``t2'') from the input `x_i` as what P4Conv do. 
 						(b) <i>Spatial Extractor</i>: we adopt P4Conv for modeling short-time local information and feed the output `s_i` frame by frame into a spatial transformer for extracting the merged local feature `m_i`. 
 						(c) <i>Temporal Aggregator</i>: we generate the short-term global feature `g_i` through the pooling layer and aggregate the long-term global information with the temporal encoder. 
 						(d) <i>Prediction Head</i>: we project the global feature `v_i` into label space via the classification head.
-						</i>
+						</div>
 				</center>
 				</td>
 
