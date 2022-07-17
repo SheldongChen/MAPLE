@@ -1,5 +1,6 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script> 
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 
 <style type="text/css">
 	body {
@@ -167,7 +168,11 @@
 							<span style="font-size:20px"><a href="https://github.com/">Yongdong Zhang<sup>1</sup></a></span>
 						</center>
 					</td>
-
+					<td align=center width=170px>
+						<center>
+							<span style="font-size:20px"><a href="https://github.com/">Jungong Han<sup>3</sup></a></span>
+						</center>
+					</td>
 					<td align=center width=100px>
 						<center>
 							<span style="font-size:20px"><a href="https://github.com/">Tao Mei<sup>2</sup></a></span>
@@ -188,7 +193,11 @@
 							<span style="font-size:18px"><a href="https://github.com/"><sup>2</sup>AI Research of JD.com</a></span>
 						</center>
 					  </td>
-
+					  <td align=center width=250px>
+						<center>
+							<span style="font-size:18px"><a href="https://github.com/"><sup>3</sup>Aberystwyth University</a></span>
+						</center>
+					  </td>
 			  </table>
 			  ACM Multimedia 2022 (<a href="https://2022.acmmm.org/" target="_blank">ACM MM</a>) 2022, <font color="#e86e14">Poster Presentation</font>
           </center>
@@ -197,7 +206,7 @@
 		  <hr>
 
   		  <br>
-  		  <table align=center width=720px>
+  		  <!-- <table align=center width=720px>
   			  <tr>
   	              <td width=400px>
   					<center>
@@ -211,7 +220,7 @@
 					</center>
   	              </td>
 
-  		  </table>
+  		  </table> -->
       	  <br><br>
 
 		  <table align=center width=720px>
@@ -270,7 +279,7 @@
 		
 
 		  <table align=center width=720px>
-			<center><h1>5-Minute presentation video</h1></center>
+			<center><h1>5-Minute presentation video (TBD)</h1></center>
 			<tr>
 				<table align=center width=720px>
 					<tr>
@@ -298,7 +307,11 @@
 				<td width=400px>
 				  <center>
 					  <span style="font-size:14px"><i>
-						The overall architecture of the attribute-guided metric distillation framework for person ReID. (a) The target ReID model that generates the pairwise distance for an image pair. (b) The interpret network that learns to decompose the pairwise distance into components of attributes and generates attention-guided attention maps for individual attributes. (Best viewed in color.)
+						The detail of DestFormer. 
+						(a) <i>Data Preparation</i>: we construct some local areas (e.g. ``a'') on adjacent frames (e.g. ``t1'', ``t2'') from the input $x_i$ as what P4Conv do. 
+						(b) <i>Spatial Extractor</i>: we adopt P4Conv for modeling short-time local information and feed the output $s_i$ frame by frame into a spatial transformer for extracting the merged local feature $m_i$. 
+						(c) <i>Temporal Aggregator</i>: we generate the short-term global feature $g_i$ through the pooling layer and aggregate the long-term global information with the temporal encoder. 
+						(d) <i>Prediction Head</i>: we project the global feature $v_i$ into label space via the classification head.
 						</i>
 				</center>
 				</td>
