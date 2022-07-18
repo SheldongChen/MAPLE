@@ -366,13 +366,13 @@
 					</center>
 					<td width=720px>
 						<center>
-							<a><img class="rounded" src = "./resources/images/Figure4.PNG" width="360px"></img></a><br>
-							<span style="font-size:18px"><a>NTU RGB+D 60</a></span><br>
+							<a><img class="rounded" src = "./resources/images/Figure4.png" width="360px"></img></a><br>
+							<span style="font-size:18px"><a>MSR-Action3D</a></span><br>
 						</center>
 					</td>
 					<td width=360px>
 						<center>
-							<a><img class="rounded" src = "./resources/images/Figure5.PNG" width="360px"></img></a><br>
+							<a><img class="rounded" src = "./resources/images/Figure5.png" width="360px"></img></a><br>
 							<span style="font-size:18px"><a>NTU RGB+D 60</a></span><br>
 						</center>
 					</td>
@@ -413,10 +413,11 @@
 		
 				<td width=300px>
 					<center>
-						<span style="font-size:24px">Log of train and test</span><br><br>
+						<span style="font-size:24px">The division of each semi-supervised datasets</span><br><br>
 						<img class="rounded" onmouseover="this.src='./resources/images/dataset_icon.jpg';" onmouseout="this.src='./resources/images/dataset_icon.jpg';" src = "./resources/images/dataset_icon.jpg" height = "150px"><br><br>
-						<span style="font-size:16px"><a href='resources/dataset/'>TBD</a></span><br>
-						<span style="font-size:16px"><a href='resources/dataset/'>TBD</a></span><br>
+						<span style="font-size:16px"><a href='resources/dataset/msraction3d/msr.zip'>MSR-Action3D</a></span><br>
+						<span style="font-size:16px"><a href='resources/dataset/ntu60/ntu60.zip'>NTU RGB+D 60</a></span><br>
+						<span style="font-size:16px"><a href='resources/dataset/ntu120/ntu120.zip'>NTU RGB+D 120</a></span><br>
 					<span style="font-size:16px"></span>
 					</center>
 				</td>
@@ -424,8 +425,27 @@
 				<center><h2> Updates </h2></center>
 				[30/06/2022] We include new subsections to track updates and address FAQs.<br>
 				<center><h2> FAQs </h2></center>
-				Q0: TBD:<br>
-				A0: TBD.<br>
+				<br>
+				Q1: Explain the trend in Figure 6.<br><br>
+				A1: As discussed in Section 4.5, the 75% masking ratio of reconstruction achieves the peak of classification performance. 
+				This trend of the plot in Figure 6 can be explained in terms of information density [1]. 
+				Similar to the Masked AutoEncoder (MAE) for image classification and video recognition [1][2][3], point cloud videos tend to have severe spatial-temporal redundancy. 
+				With this characteristic, the masked short-term features can be reconstructed from the small visible features by a high-level understanding of human actions.<br><br>
+				
+				Q2: Why do the figures shown in the appendix use the L2 norm instead of the optimization function used in the paper? 
+				Does the exploding and vanishing problem only occur when using the L2 norm?<br><br>
+				A2: <br>
+				(1). The purpose of the figure shown in the appendix is to explore the stability of network training under different training strategies. 
+				The exploding and vanishing problem is not the same as gradient exploding and gradient vanishing. 
+				It indicates the difference in the feature size under each training strategy.<br>
+				(2). Whether the optimization function or  norm is used, the exploding and vanishing problem always occurs and often leads to a decrease in classification accuracy. 
+				Compare to the optimization function, the  norm can reflect the training process more intuitively and effectively.<br><br>
+
+				<br><br>
+				Reference:<br>
+				[1] Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár, Ross B. Girshick: Masked Autoencoders Are Scalable Vision Learners. CoRR abs/2111.06377 (2021)<br>
+				[2] Christoph Feichtenhofer, Haoqi Fan, Yanghao Li, Kaiming He: Masked Autoencoders As Spatiotemporal Learners. CoRR abs/2205.09113 (2022)<br>
+				[3] Zhan Tong, Yibing Song, Jue Wang, Limin Wang: VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training. CoRR abs/2203.12602 (2022)<br>
 				 </table>
 		 
 		 <br><br>
@@ -434,17 +454,11 @@
 		 <table align=center width=720px>
 			<center><h1>Paper</h1></center>
 			   <tr>
-				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure6.png"/></a></td>
-				 <td><span style="font-size:14pt">Chen, Liu, Liu, Zhang, Zhang, Mei.<br>
+				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure1.png"/></a></td>
+				 <td><span style="font-size:14pt">Chen, Liu, Liu, Zhang, Zhang, Han, Mei.<br>
 				 MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition<br>
 				 In ACM MM, 2022 (Poster).<br>
-				 (<a href="https://openaccess.thecvf.com/content/ACMMM2022/papers/Chen_Explainable_Person_Re-Identification_With_Attribute-Guided_Metric_Distillation_ACMMM_2022_paper.pdf">arXiv</a>)</a>
-				 <span style="font-size:4pt"><a href=""><br></a>
-				 </span>
-				 </td>
-				 <td align=center><a href=""><img class="layered-paper-big" style="height:160px" src="./resources/images/Figure7.png"/></a></td>
-				 <td><span style="font-size:14pt">
-				 (<a href="https://openaccess.thecvf.com/content/ACMMM2022/supplemental/Chen_Explainable_Person_Re-Identification_ACMMM_2022_supplemental.pdf">Additional details/<br>supplementary materials</a>)</a>
+				 (<a href="https://openaccess.thecvf.com/">arXiv</a>)</a>
 				 <span style="font-size:4pt"><a href=""><br></a>
 				 </span>
 				 </td>
@@ -461,7 +475,7 @@
 
 		   <span>
 				<!-- <center><span style="font-size:28px"><b>Cite</b></span></center> -->
-				<pre style = "font-family:Courier; font-size:14px">
+				<pre style = "font-family:Courier; font-size:6px; text-align:left;">
 				@inproceedings{chen2022MAPLE,
 				title={MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition},
 				author=Chen, Liu and Liu, Zhang and Zhang, Mei.},
@@ -469,6 +483,7 @@
 				year={2022}
 				}
 				</pre>
+		    </span>
 		  </div>
   		  </table>
 
