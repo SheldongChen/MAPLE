@@ -104,6 +104,26 @@ Our MAPLE Project is based on [FastReID](https://github.com/JDAI-CV/fast-reid)ã€
         ```
 
 
+ ## Train baseline of 5%/10%/20%/30%/40% superveised baseline model
+
+```bash
+# train baseline of MSR-Action dataset
+bash ./train-msr-baseline.sh
+# train baseline of NTU-60 dataset
+bash ./train-ntu-baseline.sh
+# train baseline of NTU-120 dataset
+bash ./train-ntu-120-baseline.sh
+```
+
+ ## Training for pseudo label baseline
+```bash
+# train pseudo label of MSR-Action dataset
+bash ./pseudo_labels/train_msr_pseudo.sh
+# train pseudo label of NTU-60 dataset
+bash ./pseudo_labels/train_ntu_pseudo.sh
+# train pseudo label of NTU-120 dataset
+bash ./pseudo_labels/train_ntu120_pseudo.sh
+```
  ## Training for MAPLE
  - TBD
 
