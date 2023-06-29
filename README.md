@@ -1,5 +1,5 @@
 # **Project of  MAPLE**
-MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition. (ACM MM 2022)
+MAPLE: Masked Pseudo-Labeling autoEncoder for Semi-supervised Point Cloud Action Recognition. (ACM MM 2022 Oral)
 
 Our MAPLE Project is based on [FastReID](https://github.com/JDAI-CV/fast-reid)、[P4Transformer (2021 version)](https://github.com/hehefan/P4Transformer/tree/832b0529bf8f2ac941f5871f3d94c04325506a63)、[3DV](https://github.com/3huo/3DV-Action)、[PointNet++](https://github.com/facebookresearch/votenet/tree/master/pointnet2)
 
