@@ -136,10 +136,18 @@ bash vat/train_vat_msr_gpu0_resume.sh
 ```
 
  ## Training for MAPLE
- - TBD
+```bash
+# use MSR-Action dataset as example, bash file of other datasets is under ./z_mask
+# train MAPLE
+bash ./z_mask/train_mse_msr_gpu0.sh
+```
 
  ## Training for VAT+Entmin+MAPLE   
- - TBD
+```bash
+# use MSR-Action dataset as example, bash file of other datasets is under ./z_mask
+# train VAT+Entmin+MAPLE, put the best pretrained VAT+Entmin model of MSR-Action under ./output_msr/entmin/, such as ./output_msr/entmin/model_best_1.pth
+bash ./z_mask/train_mse_msr_gpu0_resume_from_entmin_mask.sh
+```
 
 ## **Citing MAPLE**
 
