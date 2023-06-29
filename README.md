@@ -124,6 +124,17 @@ bash ./pseudo_labels/train_ntu_pseudo.sh
 # train pseudo label of NTU-120 dataset
 bash ./pseudo_labels/train_ntu120_pseudo.sh
 ```
+
+ ## Training for VAT and VAT+EntMin
+```bash
+# use MSR-Action dataset as example, bash file of other datasets is under ./vat
+# train VAT + Entmin
+bash vat/train_vat_msr_gpu0.sh
+# or train VAT + Entmin + resume from pretrained model
+bash vat/train_vat_msr_gpu0_resume.sh
+# if you need to training for VAT, just remove --vat-EntMin in bash file, such as ./vat/train_vat_ntu.sh
+```
+
  ## Training for MAPLE
  - TBD
 
